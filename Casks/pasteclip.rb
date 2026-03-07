@@ -1,6 +1,6 @@
 cask "pasteclip" do
-  version "1.0.6"
-  sha256 "90ea83b9c6cc2c63105e734b5681576c614c4ff1fe82dcf7dbb4a21d7de7532a"
+  version "1.0.7"
+  sha256 "b7a037e8e4ac87751a6fdf1a4633182ab22f70d9910c42d8ac0733f7132fdd23"
 
   url "https://github.com/minsang-alt/PasteClip/releases/download/v#{version}/PasteClip-#{version}.dmg"
   name "PasteClip"
@@ -13,7 +13,6 @@ cask "pasteclip" do
 
   zap trash: [
     "~/Library/Application Support/PasteClip",
-    "~/Library/Containers/com.minsang.PasteClip",
     "~/Library/Preferences/com.minsang.PasteClip.plist",
   ]
 end
