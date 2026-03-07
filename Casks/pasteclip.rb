@@ -1,13 +1,13 @@
 cask "pasteclip" do
-  version "1.0.5"
-  sha256 "5d11c81b70b0bb95771aa7c493cd98ce82f51d226936537d49a4e1d7911f8f6e"
+  version "1.0.6"
+  sha256 "7e357368997c2ba516b688378a944799621d6961123b3c78cb2c444510109d56"
 
   url "https://github.com/minsang-alt/PasteClip/releases/download/v#{version}/PasteClip-#{version}.dmg"
   name "PasteClip"
   desc "Lightweight clipboard manager for macOS"
   homepage "https://github.com/minsang-alt/PasteClip"
 
-  depends_on macos: ">= :sequoia"
+  depends_on macos: ">= :sonoma"
 
   app "PasteClip.app"
 
