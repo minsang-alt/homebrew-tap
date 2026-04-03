@@ -13,7 +13,8 @@ cask "pasteclip" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/PasteClip.app"]
+                   args: ["-cr", "#{appdir}/PasteClip.app"],
+                   sudo: true
   end
 
   zap trash: [
