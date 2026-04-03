@@ -15,6 +15,12 @@ cask "pasteclip" do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/PasteClip.app"],
                    sudo: true
+    system_command "/usr/bin/defaults",
+                   args: ["write", "com.apple.dock", "ResetLaunchPad", "-bool", "true"]
+    system_command "/usr/bin/killall",
+                   args: ["Dock"]
+    system_command "/usr/bin/open",
+                   args: ["#{appdir}/PasteClip.app"]
   end
 
   zap trash: [
