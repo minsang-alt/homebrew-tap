@@ -13,8 +13,7 @@ cask "pasteclip" do
 
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/PasteClip.app"],
-                   sudo: true
+                   args: ["-cr", "#{appdir}/PasteClip.app"]
     system_command "/usr/bin/defaults",
                    args: ["write", "com.apple.dock", "ResetLaunchPad", "-bool", "true"]
     system_command "/usr/bin/killall",
