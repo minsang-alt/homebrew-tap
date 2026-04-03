@@ -11,6 +11,11 @@ cask "pasteclip" do
 
   app "PasteClip.app"
 
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/PasteClip.app"]
+  end
+
   zap trash: [
     "~/Library/Application Support/PasteClip",
     "~/Library/Preferences/com.minsang.PasteClip.plist",
