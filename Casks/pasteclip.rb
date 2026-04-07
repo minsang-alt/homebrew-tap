@@ -1,6 +1,6 @@
 cask "pasteclip" do
-  version "1.1.3"
-  sha256 "47fae7a3a8a757f887ce8f6e0d17253040e04f21783cb5e890884821a4b08706"
+  version "1.1.4"
+  sha256 "e3d644c9506cd71c59c66026a1004038175673652558eadcf7b7e0f4bee1dc72"
 
   url "https://github.com/minsang-alt/PasteClip/releases/download/v#{version}/PasteClip-v#{version}.dmg"
   name "PasteClip"
