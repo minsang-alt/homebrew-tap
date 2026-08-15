@@ -1,4 +1,25 @@
 cask "pasteclip" do
-  vepÚ[ÛˆŒKŒKŽH‚ˆÚLMˆÙ˜ÙY™ÍÙÌYŽNYLNNMLÎŽLÎNM˜™˜YM˜˜LÍLŒ™LMLŒŒÙYMˆ‚‚ˆ\›šÎ‹ËÙÚ]X‹˜ÛÛKÛZ[œØ[™ËX[Ô\ÝPÛ\Ü™[X\Ù\ËÙÝÛ›ØYÝˆÞÝ™\6–öçÒõ7FT6Æ—×b7·fW'6–öçÒæFÖr ¢æÖR%7FT6Æ— ¢FW62$Æ–v‡GvV–v‡B6Æ—&ö&BÖævW"f÷"Ö4õ2 ¢†öÖW”€‰¡ÑÑÁÌè¼½ithub.com/milØ[™ËX[Ô\ÝPÛ\‚‚ˆ\[™×ÛÛˆXXÛÜÎˆHœÛÛ›ÛXH‚‚ˆ\”\ÝPÛ\˜\‚‚ˆÜÝ›YÚÂˆÞ\Ý[WØÛÛ[X[™‹Ý\Ü‹Øš[‹Þ]ˆ‹ˆ\™ÜÎˆÈ‹XÜˆ‹ˆÞØ\\ŸKÔ\ÝPÛ\˜\—BˆÞ\Ý[WØÛÛ[X[™‹Ý\Ü‹Øš[‹ÛÜ[ˆ‹ˆ\™ÜÎˆÈˆÞØ\\ŸKÔ\ÝPÛ\˜\—Bˆ[™‚ˆ˜\˜\ÚˆÂˆŸ‹ÓX&$½ÁÁ±¥…Ñ¥½¸MÕÁÁ½ÉÐ½A…ÍÑ•±¥Àˆ°(€€€€Ž/Library/Preferences/com.minsang.PasteClip.plist",
+  version "1.1.10"
+  sha256 "eaa96dd372c78e23636ffb6d0c1c71f3a94ae3a961ddd2e621281a3be88b39df"
+
+  url "https://github.com/minsang-alt/PasteClip/releases/download/v#{version}/PasteClip-v#{version}.dmg"
+  name "PasteClip"
+  desc "Lightweight clipboard manager for macOS"
+  homepage "https://github.com/minsang-alt/PasteClip"
+
+  depends_on macos: ">= :sonoma"
+
+  app "PasteClip.app"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/PasteClip.app"]
+    system_command "/usr/bin/open",
+                   args: ["#{appdir}/PasteClip.app"]
+  end
+
+  zap trash: [
+    "~/Library/Application Support/PasteClip",
+    "~/Library/Preferences/com.minsang.PasteClip.plist",
   ]
 end
